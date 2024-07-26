@@ -1,0 +1,47 @@
+{% extends "index1.html" %}
+{% block title %}Home{% endblock title %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Main Page</title>
+<style>
+    #myButton {
+        padding: 10px 20px;
+        background-color: gray;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    ul {
+  list-style-type: none;
+}
+</style>
+</head>
+<body>
+
+
+<!--
+<script>
+function startTimer() {
+    var button = document.getElementById("myButton");
+    var colorTime = button.dataset.colorTime;
+    
+    // Change button color after specified time
+    setTimeout(changeColor, colorTime);
+}
+
+function changeColor() {
+    var button = document.getElementById("myButton");
+    button.style.backgroundColor = "blue";
+}
+</script>
+-->
+</body>
+</html>
+
+{% endblock body %}

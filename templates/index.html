@@ -1,0 +1,72 @@
+{% extends "index2.html" %}
+{% block title %}Home{% endblock title %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Main Page</title>
+<style>
+    #changeColorButton {
+        padding: 10px 20px;
+        background-color: gray;
+        color: white;
+        border: center;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    ul {
+        list-style-type: none;
+      }
+      .container {
+        position: relative;
+      }
+      
+      .center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+      a:link {
+        color: white;
+        background-color: transparent;
+        text-decoration: none;
+      }
+      a:visited {
+        color: white;
+        background-color: transparent;
+        text-decoration: none;
+      }
+      a:hover {
+        color: red;
+        background-color: transparent;
+        text-decoration: underline;
+      }
+      a:active {
+        color: yellow;
+        background-color: transparent;
+        text-decoration: underline;
+      }
+</style>
+</head>
+<body>
+    <div class="container"></div>
+    <div class="center">
+      <button id="changeColorButton"><a href="facultysignup">Faculty Sign-up</a></button>
+<button id="changeColorButton"><a href="facultysignin">Faculty Sign-in</a></button>
+<br><br>
+<button id="changeColorButton"><a href="studentsignup">Student Sign-up</a></button>
+<button id="changeColorButton"><a href="studentsignin">Student Sign-in</a></button>
+<br><br>
+    <button id="changeColorButton"><a href="admin">Admin Sign-in</a></button>
+</div>
+</body>
+</html>
+
+
+{% endblock body %}

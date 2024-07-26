@@ -1,0 +1,66 @@
+{% extends "index1.html" %}
+{% block title %}Classroom{% endblock title %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Main Page</title>
+<style>
+    #myButton {
+        padding: 10px 20px;
+        background-color: gray;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .button {
+        padding: 10px 20px;
+        background-color: gray;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .button2 {
+        padding: 10px 20px;
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+</style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1>Select a Classroom</h1>
+        {% for classroom in classrooms %}
+            {% if lenbc != 0 %}
+                {% for cl in booked_classrooms%}
+                    {% if cl == classroom %}
+                        <a href = "{% url 'submit_form' classroom=classroom %}" class="button2">{{ classroom }}</a>
+                    {% else %}
+                        <a href = "{% url 'person_form' classroom=classroom %}" class="button">{{ classroom }}</a>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <a href = "{% url 'person_form' classroom=classroom %}" class="button">{{ classroom }}</a>
+            {% endif %}   
+        {% endfor %}
+        </section>
+
+
+</body>
+</html>
+
+
+{% endblock body %}

@@ -1,0 +1,38 @@
+{% extends "index1.html" %}
+{% block title %}Floors{% endblock title %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floor Buttons</title>
+    <style>
+        .button {
+            padding: 10px 20px;
+            background-color: gray;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select a Floor</h1>
+
+        
+    {% for floor in floors %}
+        <a href="{% url 'classroom_buttons' floor=floor %}" class="button">Floor {{ floor }}</a>
+          {% endfor %}
+        
+ 
+</body>
+</html>
+
+
+
+{% endblock body %}

@@ -1,0 +1,52 @@
+{% extends "index1.html" %}
+
+{% block title %}Classroom Form{% endblock title %}
+
+{% block body %}
+    <h1>Form for Classroom: {{ classroom }}</h1>
+    <form id="timeForm" method="post">
+        {% csrf_token %}
+        <label for="c_no">Classroom no:</label>
+        <input type="text" id="c_no" name="c_no"><br><br>
+        <label for="feedback">Feedback:</label><br>
+        <textarea id="text" name="text" rows="4" cols="50"></textarea>
+        <br><br><p>{if it is a Complaint tick Complaint else tick Feedback}</p><br>
+        <input type="radio" id="Complaint" name="Feedback" value="Yes">
+        <label for="Complaint">Complaint</label><br>
+        <input type="radio" id="Feedback" name="Feedback" value="No">
+        <label for="Feedback">Feedback</label><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <h2>Feedback:</h2>
+    <table style="width:50%">
+        <tr>
+          <th>User</th>
+          <th>Classroom</th>
+          <th>Feedback</th>
+        </tr>
+        {% for fb in fb %}
+        <tr>
+            <td>{{fb.uname}}</td>
+            <td>{{ fb.c_no }}</td>
+            <td>{{ fb.text }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h2>Complaint:</h2>
+    <table style="width:50%">
+        <tr>
+          <th>User</th>
+          <th>Classroom</th>
+          <th>Complaint</th>
+          <th>Status</th>
+        </tr>
+        {% for co in co %}
+            <tr>
+                <td>{{co.uname}}</td>
+                <td>{{ co.c_no }}</td>
+                <td>{{ co.text }}</td>
+                <td>{{co.status}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock body %}
